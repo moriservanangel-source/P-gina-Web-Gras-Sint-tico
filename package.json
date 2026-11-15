@@ -1,0 +1,12 @@
+{
+    "name": "fortalezaclub",
+    "version": "1.0.0",
+    "description": "Prototipo académico de reservas deportivas FortalezaClub",
+    "main": "backend/server.js",
+    "scripts": {
+        "start": "node backend/server.js"
+    },
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserva tu cancha de vóley o fulbito en FortalezaClub.">
+    <title>FortalezaClub | Reservas deportivas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <div id="notificacion-global" class="toast-notification" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="#inicio">FORTALEZA<span>CLUB</span></a>
+            <nav aria-label="Navegación principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#canchas">Canchas</a>
+                <a href="#reserva">Reservar</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <a class="button button-small" href="#reserva">Reservar ahora</a>
+        </div>
+    </header>
+
+    <main id="vista-cliente">
+        <section class="hero" id="inicio">
+            <img class="hero-image" src="assets/images/hero-deportes.png" alt="Trofeos y balones en un estadio deportivo">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="container hero-content">
+                <p class="eyebrow">TU PASIÓN, NUESTRA CANCHA</p>
+                <h1>Vive el deporte.<br><span>Disfruta el juego.</span></h1>
+                <p>Reserva tu espacio para jugar vóley o fulbito con amigos. Elige tu horario y prepara el próximo partido.</p>
+                <a class="button" href="#canchas">Conoce nuestras canchas</a>
+            </div>
+        </section>
+
+        <section class="section container" id="canchas">
+            <div class="section-heading">
+                <p class="eyebrow">ESPACIOS DEPORTIVOS</p>
+                <h2>Elige tu cancha</h2>
+                <p>Tarifas por hora diferenciadas según el horario: día y noche.</p>
+            </div>
+            <div class="court-grid">
+                <article class="court-card">
+                    <div class="court-photo"><img src="assets/images/cancha-voley.png" alt="Cancha de grass sintético preparada para vóley"></div>
+                    <div class="court-body">
+                        <span class="tag">VÓLEY</span>
+                        <h3>Cancha de Vóley</h3>
+                        <p>Un espacio para entrenar, competir y compartir buenos momentos.</p>
+                        <div class="court-bottom">
+                            <div class="price-list">
+                                <p><span>Día (08:00–18:00)</span><strong>S/ 30.00 <small>/ hora</small></strong></p>
+                                <p><span>Noche (18:00–23:00)</span><strong>S/ 40.00 <small>/ hora</small></strong></p>
+                            </div>
+                            <button class="button reserve-choice" type="button" data-sport="voley">Reservar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="court-card">
+                    <div class="court-photo"><img src="assets/images/cancha-fulbito.png" alt="Cancha de grass sintético para fulbito"></div>
+                    <div class="court-body">
+                        <span class="tag">FULBITO</span>
+                        <h3>Cancha de Fulbito</h3>
+                        <p>Reúne a tu equipo y disfruta de un partido en grass sintético.</p>
+                        <div class="court-bottom">
+                            <div class="price-list">
+                                <p><span>Día (08:00–18:00)</span><strong>S/ 45.00 <small>/ hora</small></strong></p>
+                                <p><span>Noche (18:00–23:00)</span><strong>S/ 60.00 <small>/ hora</small></strong></p>
+                            </div>
+                            <button class="button reserve-choice" type="button" data-sport="fulbito">Reservar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section reservation-section" id="reserva">
+            <div class="container reservation-layout">
+                <div>
+                    <p class="eyebrow">RESERVA EN LÍNEA</p>
+                    <h2>Programa tu próximo partido</h2>
+                    <p>Completa tus datos, selecciona la cancha y el horario. El sistema calculará automáticamente el importe.</p>
+                    
+                    <div class="notice">
+                        <p>
+                            <strong>Dirección:</strong> 
+                                 <a href="https://maps.app.goo.gl/h8i4QswNJ5N2BbjL8" target="_blank" rel="noopener noreferrer">
+                                Calle Fortaleza 142 <span>(Ver mapa)</span>
+                                </a>
+                        </p>
+                    </div>
+                </div>
+
+                <form id="form-reserva" class="form-card">
+                    <h3>Datos de la reserva</h3>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="nombre">Nombre completo *</label>
+                            <input id="nombre" name="nombre" type="text" maxlength="80" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="telefono">Teléfono *</label>
+                            <input id="telefono" name="telefono" type="tel" inputmode="tel" maxlength="15" placeholder="965 928 275" required>
+                        </div>
+                        <div class="field">
+                            <label for="correo">Correo electrónico</label>
+                            <input id="correo" name="correo" type="email" maxlength="100" autocomplete="email">
+                        </div>
+                        <div class="field">
+                            <label for="disciplina">Disciplina *</label>
+                            <select id="disciplina" name="disciplina" required>
+                                <option value="">Selecciona una cancha</option>
+                                <option value="voley">Vóley</option>
+                                <option value="fulbito">Fulbito</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="fecha">Fecha de reserva *</label>
+                            <input id="fecha" name="fecha" type="date" required>
+                        </div>
+                        <div class="field">
+                            <label for="hora-inicio">Hora de inicio *</label>
+                            <select id="hora-inicio" name="horaInicio" required>
+                                <option value="">Selecciona fecha primero</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="hora-fin">Hora de finalización *</label>
+                            <select id="hora-fin" name="horaFin" required>
+                                <option value="">Selecciona hora de inicio</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="comprobante">Captura de pago (opcional)</label>
+                            <input id="comprobante" name="comprobante" type="file" accept="image/png,image/jpeg,image/webp">
+                            <small>Solo se genera una vista previa; el archivo no se guarda en el servidor.</small>
+                        </div>
+                    </div>
+
+                    <div id="preview-comprobante" class="proof-preview" hidden>
+                        <img id="imagen-comprobante" alt="Vista previa del comprobante">
+                        <button type="button" id="quitar-comprobante" class="text-button">Quitar imagen</button>
+                    </div>
+
+                    <div class="summary" aria-live="polite">
+                        <div><span>Duración</span><strong id="duracion">0 horas</strong></div>
+                        <div><span>Tarifa aplicada</span><strong id="precio-hora">Según horario</strong></div>
+                        <div class="summary-total"><span>Total estimado</span><strong id="total">S/ 0.00</strong></div>
+                    </div>
+
+                    <div class="payment-info">
+                        <h4>Pago mediante Yape </h4>
+
+                        <div class="qr-placeholder">
+                            <img src="assets/images/yapeQR.png" alt="El QR  de pago.">
+                        </div>
+                    </div>
+
+                    <div class="privacy-consent">
+                        <div class="privacy-consent-copy">
+                            <input type="checkbox" id="aceptar-datos" aria-label="Aceptación del tratamiento de datos personales" disabled>
+                            <span id="estado-privacidad">Aún no has aceptado el tratamiento de tus datos personales.</span>
+                        </div>
+                        <button type="button" id="abrir-privacidad" class="privacy-link">Leer uso de datos y privacidad</button>
+                    </div>
+                    <button class="button submit-button" id="enviar-reserva" type="submit" disabled>Enviar mi reserva</button>
+                    <p id="mensaje-formulario" class="form-message" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+        <section class="section container contact-section" id="contacto">
+            <p class="eyebrow">CONTACTO</p>
+            <h2>¿Tienes alguna consulta?</h2>
+            <p>Comunícate con el complejo para consultar disponibilidad y detalles de atención.</p>
+            <p><strong>Teléfono :</strong> 937 369 864</p>
+        </section>
+    </main>
+
+    <section id="vista-admin" class="admin-section" hidden>
+        <div class="container">
+            <div class="admin-header">
+                <div>
+                    <p class="eyebrow">FORTALEZACLUB</p>
+                    <h1>Panel de reservas</h1>
+                    <p>Vista administrativa de demostración en este navegador.</p>
+                </div>
+                <button id="cerrar-admin" class="button button-outline" type="button">Volver a la página</button>
+            </div>
+            <div class="stats-grid">
+                <article class="stat-card"><span>Total de reservas</span><strong id="stat-total">0</strong></article>
+                <article class="stat-card"><span>Vóley</span><strong id="stat-voley">0</strong></article>
+                <article class="stat-card"><span>Fulbito</span><strong id="stat-fulbito">0</strong></article>
+                <article class="stat-card"><span>Importe registrado</span><strong id="stat-ingresos">S/ 0.00</strong></article>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th><th>Cliente</th><th>Disciplina</th><th>Fecha</th>
+                            <th>Horario</th><th>Horas</th><th>Total</th><th>Teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-reservas">
+                        <tr><td colspan="8" class="empty-row">Todavía no hay reservas registradas.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="admin-note">La llave de acceso del frontend es únicamente demostrativa. No constituye seguridad real.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a class="brand" href="#inicio">FORTALEZA<span>CLUB</span></a>
+            <div class="social-links" aria-label="Redes sociales">
+                <span>Facebook: FortalezaClub</span>
+                <span>Instagram: FortalezaClub</span>
+            </div>
+        </div>
+    </footer>
+
+    <dialog id="modal-privacidad" class="privacy-dialog" aria-labelledby="titulo-privacidad">
+        <div class="privacy-dialog-content">
+            <p class="eyebrow">FORTALEZACLUB · PRIVACIDAD</p>
+            <h2 id="titulo-privacidad">Uso de datos personales</h2>
+            <p class="privacy-intro">Antes de enviar tu reserva, revisa cómo se utilizará la información que ingreses.</p>
+            <div class="privacy-legal"><strong>Marco de referencia</strong><p>Este aviso toma como referencia la Ley N.º 29733, Ley de Protección de Datos Personales del Perú, y su normativa reglamentaria vigente.</p></div>
+            <div class="privacy-details">
+                <h3>¿Qué datos solicitamos?</h3><p>Nombre, teléfono, correo electrónico (si lo proporcionas), disciplina, fecha y horario de reserva. También se registra si adjuntaste una imagen de comprobante.</p>
+                <h3>¿Para qué se utilizarán?</h3><p>Únicamente para registrar, organizar, consultar y coordinar tu reserva en FortalezaClub dentro de esta demostración académica.</p>
+                <h3>¿Dónde se almacenan?</h3><p>Los datos de reserva se guardan en un archivo JSON del proyecto local. Esta versión no cuenta con publicación en internet ni con un servicio externo de pagos.</p>
+                <h3>¿Qué ocurre si no aceptas?</h3><p>Puedes rechazar el tratamiento. En ese caso, el sistema no permitirá enviar la reserva. Puedes cerrar esta ventana y continuar navegando.</p>
+                <h3>Tus derechos</h3><p>Puedes solicitar información, actualización, inclusión, rectificación o supresión de tus datos, así como oponerte a su tratamiento, mediante los canales de contacto que el titular del servicio deberá habilitar.</p>
+            </div>
+            <p class="privacy-demo-note">Aviso académico de demostración. Antes de utilizar el sitio con clientes reales, el responsable del servicio debe completar su identidad, datos de contacto, condiciones de conservación y demás información legal aplicable.</p>
+            <div class="dialog-actions privacy-actions"><button type="button" id="rechazar-privacidad" class="button button-outline">Rechazar</button><button type="button" id="aceptar-privacidad" class="button">Aceptar y continuar</button></div>
+        </div>
+    </dialog>
+    <dialog id="modal-admin" class="admin-dialog">
+        <form id="form-admin" method="dialog">
+            <h2>Acceso administrativo</h2>
+            <p>Ingresa la llave de demostración.</p>
+            <label for="llave-admin">Llave de acceso</label>
+            <input id="llave-admin" type="password" autocomplete="off" required>
+            <p id="error-admin" class="error-message"></p>
+            <div class="dialog-actions">
+                <button type="button" id="cancelar-admin" class="button button-outline">Cancelar</button>
+                <button type="submit" class="button">Ingresar</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
